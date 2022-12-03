@@ -1,0 +1,14 @@
+.wrap {
+	width: 600px;
+	max-width: 90%;
+	margin: 2% auto;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+	background-color: rgb(255, 175, 175);
+}
+
+.wrap h1 {
+	text-align: center;
+}

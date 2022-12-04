@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Inline&family=Bungee+Shade&display=swap');
+
 *,
 *::before,
 *::after {
@@ -6,13 +8,19 @@
 	margin: 0;
 }
 
+:root {
+	--f-bs: 'Bungee Shade', cursive;
+	--f-bi: 'Bungee Inline', cursive;
+}
+
 body {
-	background-color: black;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
+	font-family: 'Bungee', cursive;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: #3dc0c0;
+	opacity: 1;
+	background-image: radial-gradient(#ffffff 1px, #00a1a1 1px);
+	background-size: 20px 20px;
 }
 
 code {

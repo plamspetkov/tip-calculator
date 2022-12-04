@@ -7,8 +7,21 @@
 	flex-direction: column;
 	gap: 1.2rem;
 	background-color: rgb(255, 175, 175);
+	box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 1);
+	-webkit-box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 1);
+	-moz-box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 1);
 }
 
 .wrap h1 {
 	text-align: center;
+	font-family: var(--f-bs);
+}
+
+@media (max-width: 728px) {
+	.wrap {
+		margin: 20%auto;
+	}
+	.wrap h1 {
+		font-size: 1.5rem;
+	}
 }

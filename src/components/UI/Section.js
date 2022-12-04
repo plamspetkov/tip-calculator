@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from './Card';
 import classes from './Section.module.css';
 
 const Section = (props) => {

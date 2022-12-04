@@ -1,52 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Input from '../Input/Input';
 import InfoRow from '../InfoRow/InfoRow';
 import Section from '../UI/Section';
 
-const TipCalculation = () => {
-	const [enteredAmount, setEnteredAmount] = useState('');
-	const [tip, setTip] = useState(0);
-	const [tipPercent, setTipPercent] = useState(0);
-	const [total, setTotal] = useState(0);
-
-	const onChangedAmountHandler = (e) => {
-		setEnteredAmount(+e.target.value);
+const TipCalculation = (props) => {
+	const amountHandler = (e) => {
+		props.onEnteredAmount(e.target.value);
 	};
 
-	const onChangeTipHandler = (e) => {
-		setTip(e.target.value);
+	const tipHandler = (e) => {
+		props.onEnteredTip(e.target.value);
 	};
-
-	useEffect(() => {
-		const setPercent = (enteredAmount * tip) / 100;
-		setTipPercent(setPercent.toFixed(2));
-		const totalSum = enteredAmount + tipPercent;
-		setTotal(totalSum);
-	}, [enteredAmount, tip, tipPercent]);
 
 	return (
 		<Section>
 			<Input
 				type="number"
 				name="Bill"
-				min="0"
-				max="100"
 				id="yourBill"
-				value={enteredAmount}
 				placeholder="Your bill"
-				onChange={onChangedAmountHandler}
+				onChange={amountHandler}
 			/>
 			<Input
 				type="range"
 				name="Select Tip"
 				id="tipInput"
-				printValue={`${tip}%`}
-				value={tip}
+				min="0"
+				max="100"
+				printValue={`${props.tipValue}%`}
+				value={props.tipValue}
 				// step="1"
-				onChange={onChangeTipHandler}
+				onChange={tipHandler}
 			/>
-			<InfoRow name="Tip" printValue={tipPercent} />
-			<InfoRow name="Total" printValue={total} />
+			<InfoRow name="Tip" printValue={props.tipPercent} />
+			<InfoRow name="Total" printValue={props.totalBill} />
 		</Section>
 	);
 };

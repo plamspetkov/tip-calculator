@@ -41,7 +41,7 @@
 
 @media (max-width: 728px) {
 	.input input {
-		width: 70%;
+		width: 80%;
 		height: 3rem;
 		font-size: 2rem;
 	}
@@ -81,6 +81,7 @@
 	border-radius: 8px;
 	background: #3dc0c0;
 	cursor: pointer;
+	border-bottom: 5px solid black;
 }
 
 .range input::-moz-range-thumb {
